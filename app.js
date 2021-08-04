@@ -10,9 +10,9 @@ var usersRouter = require("./routes/users");
 var app = express();
 
 //Set up mongoose connection
+var uri = require("./ignore.js");
 var mongoose = require("mongoose");
-var mongoDB =
-  "mongodb+srv://mgamboa:1234567890@cluster0.yecfz.mongodb.net/local_library?retryWrites=true&w=majority";
+var mongoDB = uri;
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 var db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
